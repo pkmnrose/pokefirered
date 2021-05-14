@@ -28,6 +28,21 @@ u8 GetUnlockedSeviiAreas(void);
 u32 GetPlayerTrainerId(void);
 bool8 CutMoveRuinValleyCheck(void);
 void CutMoveOpenDottedHoleDoor(void);
+
+bool8 DigMoveSealedChamberCheck(void);
+void DigMoveOpenSealedChamberDoor(void);
+bool8 FlashMoveRegiChamber1Check(void);
+void FlashMoveOpenRegiChamber1Door(void);
+bool8 StrengthMoveRegiChamber2Check(void);
+void StrengthMoveOpenRegiChamber2Door(void);
+bool8 RockSmashMoveRegiChamber3Check(void);
+void RockSmashMoveOpenRegiChamber3Door(void);
+bool8 SweetScentMoveRegiChamber4Check(void);
+void SweetScentMoveOpenRegiChamber4Door(void);
+bool8 TeleportMoveRegiChamber5Check(void);
+void TeleportMoveOpenRegiChamber5Door(void);
+
+
 void RunMassageCooldownStepCounter(void);
 void IncrementResortGorgeousStepCounter(void);
 void IncrementBirthIslandRockStepCount(void);

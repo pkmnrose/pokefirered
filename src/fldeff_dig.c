@@ -8,10 +8,22 @@
 
 static void FieldCallback_Dig(void);
 static void sub_80C9AFC(void);
+static EWRAM_DATA bool8 sScheduleOpenSealedChamber = FALSE;
 
 bool8 SetUpFieldMove_Dig(void)
 {
-    if (CanUseEscapeRopeOnCurrMap() == TRUE)
+    s16 x, y;
+    u8 i, j;
+    sScheduleOpenSealedChamber = FALSE;
+    if (DigMoveSealedChamberCheck() == TRUE)
+    {
+        sScheduleOpenSealedChamber = TRUE;
+        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        gPostMenuFieldCallback = FieldCallback_Dig;
+        return TRUE;
+    }
+	
+	if (CanUseEscapeRopeOnCurrMap() == TRUE)
     {
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
         gPostMenuFieldCallback = FieldCallback_Dig;
@@ -30,7 +42,6 @@ static void FieldCallback_Dig(void)
 bool8 FldEff_UseDig(void)
 {
     u8 taskId = CreateFieldEffectShowMon();
-
     FLDEFF_SET_FUNC_TO_DATA(sub_80C9AFC);
     SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT);
     return FALSE;
@@ -39,8 +50,10 @@ bool8 FldEff_UseDig(void)
 static void sub_80C9AFC(void)
 {
     u8 taskId;
-
     FieldEffectActiveListRemove(FLDEFF_USE_DIG);
+    if (sScheduleOpenDottedHole == TRUE)
+        DigMoveOpenSealedChamberDoor();
+    else
     taskId = CreateTask(sub_80A1C44, 8);
     gTasks[taskId].data[0] = 0;
 }

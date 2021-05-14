@@ -2312,6 +2312,157 @@ void CutMoveOpenDottedHoleDoor(void)
     ScriptContext2_Disable();
 }
 
+
+// For Dig in Rose, opening one of the Regi chambers (change flags / other values below)
+bool8 DigMoveSealedChamberCheck(void)
+{
+    if (FlagGet(FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE) != TRUE
+     && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SIX_ISLAND_RUIN_VALLEY)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SIX_ISLAND_RUIN_VALLEY)
+     && gSaveBlock1Ptr->pos.x == 24
+     && gSaveBlock1Ptr->pos.y == 25
+     && GetPlayerFacingDirection() == DIR_NORTH
+    )
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void DigMoveOpenSealedChamberDoor(void)
+{
+    MapGridSetMetatileIdAt(31, 31, METATILE_SeviiIslands67_DottedHoleDoor_Open);
+    DrawWholeMapView();
+    PlaySE(SE_BANG);
+    FlagSet(FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE);
+    ScriptContext2_Disable();
+}
+
+// For Flash in Rose, opening one of the Regi chambers (change flags / other values below)
+bool8 FlashMoveRegiChamber1Check(void)
+{
+    if (FlagGet(FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE) != TRUE
+     && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SIX_ISLAND_RUIN_VALLEY)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SIX_ISLAND_RUIN_VALLEY)
+     && gSaveBlock1Ptr->pos.x == 24
+     && gSaveBlock1Ptr->pos.y == 25
+     && GetPlayerFacingDirection() == DIR_NORTH
+    )
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void FlashMoveOpenRegiChamber1Door(void)
+{
+    MapGridSetMetatileIdAt(31, 31, METATILE_SeviiIslands67_DottedHoleDoor_Open);
+    DrawWholeMapView();
+    PlaySE(SE_BANG);
+    FlagSet(FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE);
+    ScriptContext2_Disable();
+}
+
+// For Strength in Rose, opening one of the Regi chambers (change flags / other values below)
+bool8 StrengthMoveRegiChamber2Check(void)
+{
+    if (FlagGet(FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE) != TRUE
+     && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SIX_ISLAND_RUIN_VALLEY)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SIX_ISLAND_RUIN_VALLEY)
+     && gSaveBlock1Ptr->pos.x == 24
+     && gSaveBlock1Ptr->pos.y == 25
+     && GetPlayerFacingDirection() == DIR_NORTH
+    )
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void StrengthMoveOpenRegiChamber2Door(void)
+{
+    MapGridSetMetatileIdAt(31, 31, METATILE_SeviiIslands67_DottedHoleDoor_Open);
+    DrawWholeMapView();
+    PlaySE(SE_BANG);
+    FlagSet(FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE);
+    ScriptContext2_Disable();
+}
+
+// For Rock Smash in Rose, opening one of the Regi chambers (change flags / other values below)
+bool8 RockSmashMoveRegiChamber3Check(void)
+{
+    if (FlagGet(FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE) != TRUE
+     && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SIX_ISLAND_RUIN_VALLEY)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SIX_ISLAND_RUIN_VALLEY)
+     && gSaveBlock1Ptr->pos.x == 24
+     && gSaveBlock1Ptr->pos.y == 25
+     && GetPlayerFacingDirection() == DIR_NORTH
+    )
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void RockSmashMoveOpenRegiChamber3Door(void)
+{
+    MapGridSetMetatileIdAt(31, 31, METATILE_SeviiIslands67_DottedHoleDoor_Open);
+    DrawWholeMapView();
+    PlaySE(SE_BANG);
+    FlagSet(FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE);
+    ScriptContext2_Disable();
+}
+
+// For Sweet Scent in Rose, opening one of the Regi chambers (change flags / other values below)
+bool8 SweetScentMoveRegiChamber4Check(void)
+{
+    if (FlagGet(FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE) != TRUE
+     && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SIX_ISLAND_RUIN_VALLEY)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SIX_ISLAND_RUIN_VALLEY)
+     && gSaveBlock1Ptr->pos.x == 24
+     && gSaveBlock1Ptr->pos.y == 25
+     && GetPlayerFacingDirection() == DIR_NORTH
+    )
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void SweetScentMoveOpenRegiChamber4Door(void)
+{
+    MapGridSetMetatileIdAt(31, 31, METATILE_SeviiIslands67_DottedHoleDoor_Open);
+    DrawWholeMapView();
+    PlaySE(SE_BANG);
+    FlagSet(FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE);
+    ScriptContext2_Disable();
+}
+
+// For Teleport in Rose, opening one of the Regi chambers (change flags / other values below)
+bool8 TeleportMoveRegiChamber5Check(void)
+{
+    if (FlagGet(FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE) != TRUE
+     && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SIX_ISLAND_RUIN_VALLEY)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SIX_ISLAND_RUIN_VALLEY)
+     && gSaveBlock1Ptr->pos.x == 24
+     && gSaveBlock1Ptr->pos.y == 25
+     && GetPlayerFacingDirection() == DIR_NORTH
+    )
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void TeleportMoveOpenRegiChamber5Door(void)
+{
+    MapGridSetMetatileIdAt(31, 31, METATILE_SeviiIslands67_DottedHoleDoor_Open);
+    DrawWholeMapView();
+    PlaySE(SE_BANG);
+    FlagSet(FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE);
+    ScriptContext2_Disable();
+}
+
+
+
+
+
+
+
 static const u16 sDeoxysObjectPals[][16] = {
     INCBIN_U16("graphics/field_specials/unk_83F6206.gbapal"),
     INCBIN_U16("graphics/field_specials/unk_83F6226.gbapal"),
